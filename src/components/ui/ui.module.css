@@ -1,0 +1,49 @@
+.autocomplete {
+  padding-top: 2rem;
+  display: flex;
+  flex-Direction: column;
+  justify-content: center;
+}
+
+.itemListNot {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.itemList {
+  padding-top: 0.5rem;
+}
+
+.itemList:hover {
+  cursor: pointer;
+  background-color: #697177;
+}
+
+.activeItem {
+  background-color: #697177;
+}
+
+.infoboxtable th.infoboxtimelimited {
+  background: url(https://gamepedia.cursecdn.com/seaofthieves_gamepedia/1/13/Icon_time.png?version=39c7eb2a35bf5f9bda8ce54f0ec6362d) no-repeat 10px -7px/42px,linear-gradient(30deg,rgba(110,110,110,0) 0,rgba(47,162,136,0.5) 49%,rgba(47,162,136,0.5) 51%,rgba(110,110,110,0)) !important;
+  height: 1.5em;
+  vertical-align: baseline;
+  color: #cdf9d9;
+  padding: 3px;
+}
+
+.scrollableContainer {
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.autocompleteContainer {
+  width: 60%;
+  margin: auto;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .autocompleteContainer {
+    width: 100%;
+  }
+}
