@@ -9,6 +9,7 @@ import { Autocomplete } from "."
 import { Commendation } from "../../ts/interfaces/Commendation.interface"
 
 import classes from "./ui.module.css"
+import ImageList from "./ImageList";
 
 const AutocompleteWrapper = () => {
 	const [data, setData] = useState<Commendation[]>([])
@@ -67,7 +68,10 @@ const AutocompleteWrapper = () => {
 				{selectedCommendation && (
 					<Row>
 						<Col span={4}>
-							<img src={selectedCommendation.imageUrl} alt={selectedCommendation.name} />
+							<img src={selectedCommendation.imageUrl} alt={selectedCommendation.name} style={{
+								width: "80%",
+								height: "80%"
+							}} />
 							<Text size='$md'>{selectedCommendation.description}</Text>
 							{selectedCommendation.gradeRequirements.length !== 0 && (
 								<Text h4><br />Grade Requirements:</Text>
@@ -90,24 +94,10 @@ const AutocompleteWrapper = () => {
 							)}
 							<Row>
 								<Col>
-									<ul>
-										{selectedCommendation.rewards.items.filter((_, index) => index % 2 === 0).map((item, index) => (
-											<li key={index}><img src={item.imageUrl} alt={item.name} style={{
-												display: "block",
-												margin: "auto"
-											}}></img><br /><Text size='$md' style={{ textAlign: "center" }}>{item.name}</Text></li>
-										))}
-									</ul>
+									<ImageList images={selectedCommendation.rewards.items.filter((_, index) => index % 2 === 0)} />
 								</Col>
 								<Col>
-									<ul>
-										{selectedCommendation.rewards.items.filter((_, index) => index % 2 === 1).map((item, index) => (
-											<li key={index}><img src={item.imageUrl} alt={item.name} style={{
-												display: "block",
-												margin: "auto"
-											}}></img><br /><Text size='$md' style={{ textAlign: "center" }}>{item.name}</Text></li>
-										))}
-									</ul>
+									<ImageList images={selectedCommendation.rewards.items.filter((_, index) => index % 2 === 1)} />
 								</Col>
 							</Row>
 						</Col>
